@@ -1,0 +1,73 @@
+{
+  "id": "csb-donjon-rpg",
+  "title": "Donjon RPG - CSB",
+  "description": "This module implements templates, macros, and compendiums necessary to run Donjon RPG games using FoundryVTT.",
+  "authors": [
+    {
+      "name": "Skepickle",
+      "flags": {}
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10",
+    "maximum": "10"
+  },
+  "packs": [
+    {
+      "name": "actor-templates",
+      "label": "Actor Templates",
+      "type": "Actor",
+      "system": "custom-system-builder",
+      "path": "packs/actor-templates.db",
+      "module": "csb-donjon-rpg",
+      "entity": "actors"
+    },
+    {
+      "name": "item-templates",
+      "label": "Item Templates",
+      "type": "Item",
+      "system": "custom-system-builder",
+      "path": "packs/item-templates.db",
+      "module": "csb-donjon-rpg",
+      "entity": "items"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "custom-system-builder",
+        "type": "system",
+        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/raw/main/system.json"
+      }
+    ],
+    "requires" : [
+      {
+        "id": "hide-chat-initiative",
+        "type": "module",
+        "compatibily" : {
+          "verified": "1.0.0"
+        }
+      },
+      {
+        "id": "requestor",
+        "type": "module",
+        "compatibily" : {
+          "verified": "10.0.5.2"
+        }
+      },
+      {
+        "id": "unfold-all-rolls",
+        "type": "module",
+        "compatibility": {
+          "verified": "1.0.0"
+        }
+      }
+    ]
+  },
+  "url": "https://github.com/skepickle/foundryvtt-csb-donjon-rpg",
+  "manifest": "https://raw.githubusercontent.com/skepickle/foundryvtt-csb-donjon-rpg/1.0.0/module.json",
+  "download": "https://github.com/skepickle/foundryvtt-csb-donjon-rpg/archive/1.0.0.zip",
+  "readme": "https://raw.githubusercontent.com/skepickle/foundryvtt-csb-donjon-rpg/1.0.0/README.md"
+}
