@@ -4,34 +4,59 @@
   "description": "This module implements templates, macros, and compendiums necessary to run Donjon RPG games using FoundryVTT.",
   "authors": [
     {
-      "name": "Skepickle",
-      "flags": {}
+      "name": "Skepickle"
     }
   ],
   "version": "1.0.0",
   "compatibility": {
     "minimum": "10",
-    "verified": "10",
-    "maximum": "10"
+    "verified": "11",
+    "maximum": "11"
   },
   "packs": [
     {
       "name": "actor-templates",
       "label": "Actor Templates",
+      "path": "packs/actor-templates",
       "type": "Actor",
       "system": "custom-system-builder",
-      "path": "packs/actor-templates.db",
-      "module": "csb-donjon-rpg",
-      "entity": "actors"
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "item-templates",
       "label": "Item Templates",
+      "path": "packs/item-templates",
       "type": "Item",
       "system": "custom-system-builder",
-      "path": "packs/item-templates.db",
-      "module": "csb-donjon-rpg",
-      "entity": "items"
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "macros",
+      "label": "Macros",
+      "path": "packs/macros",
+      "type": "Macro",
+      "system": "custom-system-builder",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "rules",
+      "label": "Rules",
+      "path": "packs/rules",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder"
     }
   ],
   "relationships": {
@@ -41,24 +66,20 @@
         "type": "system",
         "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/raw/main/system.json",
         "compatibility": {
-          "verified": "2.1.0"
+          "verified": "3.0.0"
         }
       }
     ],
-    "requires" : [
+    "requires": [
       {
         "id": "hide-chat-initiative",
         "type": "module",
-        "compatibily" : {
-          "verified": "1.0.0"
-        }
+        "compatibility": {}
       },
       {
         "id": "requestor",
         "type": "module",
-        "compatibily" : {
-          "verified": "10.0.5.2"
-        }
+        "compatibility": {}
       },
       {
         "id": "unfold-all-rolls",
